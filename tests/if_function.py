@@ -15,7 +15,7 @@ def decimal_value(r):
         return 1000
     return -1
 
-def roman_to_decimal(str):
+def roman_to_decimal_if_function(str):
     result = 0
     i = 0
 
@@ -39,33 +39,3 @@ def roman_to_decimal(str):
             i = i + 1
 
     return result
-
-def decimal_to_roman(num):
-    if not 1 <= num <= 3999:
-        raise ValueError("Liczba musi być z przedziału 1-3999 (klasyczny zapis rzymski)")
-
-    val = [
-        1000, 900, 500, 400,
-        100, 90, 50, 40,
-        10, 9, 5, 4,
-        1
-    ]
-    syms = [
-        "M", "CM", "D", "CD",
-        "C", "XC", "L", "XL",
-        "X", "IX", "V", "IV",
-        "I"
-    ]
-
-    result = ""
-    i = 0
-
-    while num > 0:
-        for _ in range(num // val[i]):
-            print(syms[i], val[i])
-            result += syms[i]
-            num -= val[i]
-        i += 1
-    return result
-
-print(decimal_to_roman(3000))
