@@ -9,6 +9,8 @@
 # FIRST function has bunch of if's inside, SECOND has swich case in it
 
 import time
+import numpy as np
+import matplotlib.pyplot as plt
 
 from function_with_dictionary import roman_to_decimal_dictionary_function
 from function_with_lists import roman_to_decimal_list_function
@@ -16,35 +18,72 @@ from if_function import roman_to_decimal_if_function
 from switch_function import roman_to_decimal_switch_function
 
 variables = ['IX', 'XL', 'L', 'LIX', 'DCCXIV', 'ML', 'MCCCXCVIII', 'MCMXVI', 'MMCXXXVII', 'MMDC']
+times = 30
 
-start = time.time()
-for variable in variables:
-    print(f'roman number: {variable}, in decimal by roman_to_decimal_switch_function = {roman_to_decimal_switch_function(variable)}')
-end = time.time()
-duration = end - start
-print(f"Czas wykonania dla roman_to_decimal_switch_function: {duration:.6f} sekundy")
-print('#'*15)
+results = {
+    'roman_to_decimal_switch_function': [],
+    'roman_to_decimal_if_function': [],
+    'roman_to_decimal_dictionary_function': [],
+    'roman_to_decimal_list_function': []
+}
 
-start = time.time()
-for variable in variables:
-    print(f'roman number: {variable}, in decimal by roman_to_decimal_if_function = {roman_to_decimal_if_function(variable)}')
-end = time.time()
-duration = end - start
-print(f"Czas wykonania dla roman_to_decimal_if_function: {duration:.6f} sekundy")
-print('#'*15)
+for i in range(0,times):
+    start = time.time()
+    for variable in variables:
+        print(f'roman number: {variable}, in decimal by roman_to_decimal_switch_function = {roman_to_decimal_switch_function(variable)}')
+    end = time.time()
+    duration = end - start
+    results['roman_to_decimal_switch_function'].append(duration)
 
-start = time.time()
-for variable in variables:
-    print(f'roman number: {variable}, in decimal by roman_to_decimal_dictionary_function = {roman_to_decimal_dictionary_function(variable)}')
-end = time.time()
-duration = end - start
-print(f"Czas wykonania dla roman_to_decimal_dictionary_function: {duration:.6f} sekundy")
-print('#'*15)
+for i in range(0,times):
+    start = time.time()
+    for variable in variables:
+        print(f'roman number: {variable}, in decimal by roman_to_decimal_if_function = {roman_to_decimal_if_function(variable)}')
+    end = time.time()
+    duration = end - start
+    results['roman_to_decimal_if_function'].append(duration)
 
-start = time.time()
-for variable in variables:
-    print(f'roman number: {variable}, in decimal by roman_to_decimal_list_function = {roman_to_decimal_list_function(variable)}')
-end = time.time()
-duration = end - start
-print(f"Czas wykonania dla roman_to_decimal_list_function: {duration:.6f} sekundy")
-print('#'*15)
+for i in range(0,times):
+    start = time.time()
+    for variable in variables:
+        print(f'roman number: {variable}, in decimal by roman_to_decimal_dictionary_function = {roman_to_decimal_dictionary_function(variable)}')
+    end = time.time()
+    duration = end - start
+    results['roman_to_decimal_dictionary_function'].append(duration)
+
+for i in range(0,times):
+    start = time.time()
+    for variable in variables:
+        print(f'roman number: {variable}, in decimal by roman_to_decimal_list_function = {roman_to_decimal_list_function(variable)}')
+    end = time.time()
+    duration = end - start
+    results['roman_to_decimal_list_function'].append(duration)
+
+average_results = {}
+for i in results:
+   average_results[i] = np.average(results[i])
+
+average_results = dict(sorted(average_results.items(), key=lambda x: x[1]))
+labels = list(average_results.keys())
+values = list(average_results.values())
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values)
+plt.ylabel('Czas wykonania (s)')
+plt.title('Czas wykonania funkcji (bezwzględna wartość)')
+plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+
+average_results_db = {k: 10 * np.log10(v) for k, v in average_results.items()}
+labels_db = list(average_results_db.keys())
+values_db = list(average_results_db.values())
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels_db, values_db)
+plt.ylabel('Różnica względem najszybszego (dB)')
+plt.title('Różnice czasów wykonania w skali decybelowej')
+plt.ylim(-35, -30)
+plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
