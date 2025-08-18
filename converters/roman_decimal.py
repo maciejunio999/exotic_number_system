@@ -1,31 +1,36 @@
-def decimal_value(r):
-    if (r == 'I'):
-        return 1
-    if (r == 'V'):
-        return 5
-    if (r == 'X'):
-        return 10
-    if (r == 'L'):
-        return 50
-    if (r == 'C'):
-        return 100
-    if (r == 'D'):
-        return 500
-    if (r == 'M'):
-        return 1000
-    return -1
-
-def roman_to_decimal(str):
+def roman_to_decimal_list_function(str):
     result = 0
     i = 0
 
+    roman_dictionary = [
+        'I',
+        'V',
+        'X',
+        'L',
+        'C',
+        'D',
+        'M'
+        ]
+    decimal_dictionary = [
+        1,
+        5,
+        10,
+        50,
+        100,
+        500,
+        1000
+    ]
+    
+
     while (i < len(str)):
         # Getting value of symbol s[i]
-        s1 = decimal_value(str[i])
+        index_for_s1 = roman_dictionary.index(str[i])
+        s1 = decimal_dictionary[index_for_s1]
 
         if (i + 1 < len(str)):
             # Getting value of symbol s[i + 1]
-            s2 = decimal_value(str[i + 1])
+            index_for_s2 = roman_dictionary.index(str[i + 1])
+            s2 = decimal_dictionary[index_for_s2]
 
             # Comparing both values , if current symbol is greater or equal to the next symbol
             if (s1 >= s2):
@@ -39,33 +44,3 @@ def roman_to_decimal(str):
             i = i + 1
 
     return result
-
-def decimal_to_roman(num):
-    if not 1 <= num <= 3999:
-        raise ValueError("Liczba musi być z przedziału 1-3999 (klasyczny zapis rzymski)")
-
-    val = [
-        1000, 900, 500, 400,
-        100, 90, 50, 40,
-        10, 9, 5, 4,
-        1
-    ]
-    syms = [
-        "M", "CM", "D", "CD",
-        "C", "XC", "L", "XL",
-        "X", "IX", "V", "IV",
-        "I"
-    ]
-
-    result = ""
-    i = 0
-
-    while num > 0:
-        for _ in range(num // val[i]):
-            print(syms[i], val[i])
-            result += syms[i]
-            num -= val[i]
-        i += 1
-    return result
-
-print(decimal_to_roman(3000))
