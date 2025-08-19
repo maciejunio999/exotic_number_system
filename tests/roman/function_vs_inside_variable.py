@@ -12,10 +12,10 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-from function_with_dictionary import roman_to_decimal_dictionary_function
-from function_with_lists import roman_to_decimal_list_function
-from if_function import roman_to_decimal_if_function
-from switch_function import roman_to_decimal_switch_function
+from tests.roman.function_with_dictionary import roman_to_decimal_dictionary_function
+from tests.roman.function_with_lists import roman_to_decimal_list_function
+from tests.roman.if_function import roman_to_decimal_if_function
+from tests.roman.switch_function import roman_to_decimal_switch_function
 
 variables = ['IX', 'XL', 'L', 'LIX', 'DCCXIV', 'ML', 'MCCCXCVIII', 'MCMXVI', 'MMCXXXVII', 'MMDC']
 times = 30
