@@ -1,2 +1,2 @@
-def hex_to_decimal(x, y):
-    print('hex_to_decimal...')
+def hex_to_decimal(x):
+    return int(x, 16)
