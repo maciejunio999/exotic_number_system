@@ -64,3 +64,27 @@ average_results = {}
 for i in results:
    average_results[i] = np.average(results[i])
 
+average_results = dict(sorted(average_results.items(), key=lambda x: x[1]))
+labels = list(average_results.keys())
+values = list(average_results.values())
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels, values)
+plt.ylabel('Czas wykonania (s)')
+plt.title('Czas wykonania funkcji (bezwzględna wartość)')
+plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
+
+average_results_db = {k: 10 * np.log10(v) for k, v in average_results.items()}
+labels_db = list(average_results_db.keys())
+values_db = list(average_results_db.values())
+
+plt.figure(figsize=(10, 5))
+plt.bar(labels_db, values_db)
+plt.ylabel('Różnica względem najszybszego (dB)')
+plt.title('Różnice czasów wykonania w skali decybelowej')
+plt.ylim(-35, -30)
+plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+plt.tight_layout()
+plt.show()
