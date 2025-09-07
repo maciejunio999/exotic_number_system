@@ -1,4 +1,4 @@
-def octal_to_decimal(octal):
+def octal_to_decimal(octal: int):
     if octal == 0:
         return 0
     else:
