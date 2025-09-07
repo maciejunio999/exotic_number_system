@@ -111,18 +111,18 @@ Błąd: Niepoprawna liczba w systemie rzymskim.
 exotic_calc/
 │
 ├── main.py                # Punkt wejściowy CLI
-├── converter.py           # Funkcje konwertujące między systemami
+├── converters             # folder zawierający fukcje konwertujące między systemami
 ├── calculator.py          # Operacje arytmetyczne i parser
 ├── roman_utils.py         # Obsługa systemu rzymskiego
-└── utils.py               # Walidacja i pomocnicze funkcje
+└── tests                  # Folder z testami przeprowadzonymi na fukcjach kowertujących
 ```
 
 **Główne funkcje:**
 
 - `convert(number: str, from_system: str, to_system: str) -> str`
 - `evaluate(expr: str, system: str) -> str`
-- `roman_to_decimal(s: str) -> int`
-- `decimal_to_roman(n: int) -> str`
+- functions converting to exotic system
+- functions converting from exotic system
 - `validate_input(number: str, system: str) -> bool`
 
 ---

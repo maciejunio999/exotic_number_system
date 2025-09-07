@@ -13,3 +13,6 @@ def conversion(coversion, number):
             return octal_to_decimal(int(number))
         case 'rom_dec':
             return roman_to_decimal(number)
+
+def convert(number: str, from_system: str, to_system: str):
+    return 'convert'
