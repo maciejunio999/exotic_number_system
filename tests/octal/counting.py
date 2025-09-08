@@ -1,6 +1,6 @@
 # Function to convert octal to decimal, by pute math
 
-def octal_to_decimal(n):
+def octal_to_decimal_using_math(n):
 
     num = n
     dec_value = 0

@@ -1,4 +1,4 @@
-def octal_to_decimal(n):
+def octal_to_decimal_with_dictionary(n):
     # Define a dictionary to map octal digits to their decimal equivalents
     lookup = {
         0: 0, 1: 1, 2: 2, 3: 3,
