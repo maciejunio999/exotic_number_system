@@ -1,5 +1,5 @@
-def hexal_to_decimal(n):
-    hex = n.strip().upper( )
+def hexal_to_decimal(number: str):
+    hex = number.strip().upper( )
     l = count = i = 0
     s = len(hex) - 1
     while s >= 0:
