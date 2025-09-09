@@ -10,10 +10,10 @@
 
 from utils.exotic_to_decimal_testing import exotic_to_decimal_testing
 
-from hexal.for_loop_function import hexal_to_decimal as hexal_to_decimal_for_loop_function
-from hexal.int_function import hexal_to_decimal as hexal_to_decimal_int_function
-from hexal.while_loop_function import hexal_to_decimal as hexal_to_decimal_while_loop_function
-from hexal.literal_eval import hexal_to_decimal as hexal_to_decimal_literal_eval
+from hexal.for_loop_function import hexal_to_decimal_for_loop_function
+from hexal.int_function import hexal_to_decimal_int_function
+from hexal.while_loop_function import hexal_to_decimal_while_loop_function
+from hexal.literal_eval import hexal_to_decimal_literal_eval
 
 hexal_functions = [hexal_to_decimal_for_loop_function, hexal_to_decimal_int_function, hexal_to_decimal_while_loop_function, hexal_to_decimal_literal_eval]
 hexal_variables = ['9', '28', '32', '3B', '2CA', '41A', '576', '77C', '859', 'A28']
