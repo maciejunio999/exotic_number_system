@@ -1,4 +1,4 @@
-def binary_to_decimal(binary: str):
+def binary_to_decimal_old_function(binary: str):
     decimal = 0
     i = 0
     l = len(binary)
