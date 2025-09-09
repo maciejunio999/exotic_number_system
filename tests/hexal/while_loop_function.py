@@ -1,4 +1,4 @@
-def hexal_to_decimal(number: str):
+def hexal_to_decimal_while_loop_function(number: str):
     hex = number.strip().upper( )
     l = count = i = 0
     s = len(hex) - 1
