@@ -10,10 +10,10 @@
 
 from utils.exotic_to_decimal_testing import exotic_to_decimal_testing
 
-from octal.convert_with_table import octal_to_decimal_with_dictionary
-from octal.counting import octal_to_decimal_using_math
-from octal.predefined import octal_to_decimal_predefined_function
-from octal.recursion import octal_to_decimal_using_recursion
+from to_decimal.octal.convert_with_table import octal_to_decimal_with_dictionary
+from to_decimal.octal.counting import octal_to_decimal_using_math
+from to_decimal.octal.predefined import octal_to_decimal_predefined_function
+from to_decimal.octal.recursion import octal_to_decimal_using_recursion
 
 octal_functions = [octal_to_decimal_with_dictionary, octal_to_decimal_using_math, octal_to_decimal_predefined_function, octal_to_decimal_using_recursion]
 octal_variables = [11, 50, 62, 73, 1312, 2032, 2566, 3574, 4131, 5050]

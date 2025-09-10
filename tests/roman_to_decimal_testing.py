@@ -10,10 +10,10 @@
 
 from utils.exotic_to_decimal_testing import exotic_to_decimal_testing
 
-from roman.function_with_dictionary import roman_to_decimal_dictionary_function
-from roman.function_with_lists import roman_to_decimal_list_function
-from roman.if_function import roman_to_decimal_if_function
-from roman.switch_function import roman_to_decimal_switch_function
+from to_decimal.roman.function_with_dictionary import roman_to_decimal_dictionary_function
+from to_decimal.roman.function_with_lists import roman_to_decimal_list_function
+from to_decimal.roman.if_function import roman_to_decimal_if_function
+from to_decimal.roman.switch_function import roman_to_decimal_switch_function
 
 roman_variables = ['IX', 'XL', 'L', 'LIX', 'DCCXIV', 'ML', 'MCCCXCVIII', 'MCMXVI', 'MMCXXXVII', 'MMDC']
 roman_functions = [roman_to_decimal_dictionary_function, roman_to_decimal_list_function, roman_to_decimal_if_function, roman_to_decimal_switch_function]

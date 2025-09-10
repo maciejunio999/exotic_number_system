@@ -10,10 +10,10 @@
 
 from utils.exotic_to_decimal_testing import exotic_to_decimal_testing
 
-from binary.hornet_function import binary_to_decimal_hornet_function
-from binary.int_function import binary_to_decimal_int_function
-from binary.loops_function import binary_to_decimal_loops_function
-from binary.old_function import binary_to_decimal_old_function
+from to_decimal.binary.hornet_function import binary_to_decimal_hornet_function
+from to_decimal.binary.int_function import binary_to_decimal_int_function
+from to_decimal.binary.loops_function import binary_to_decimal_loops_function
+from to_decimal.binary.old_function import binary_to_decimal_old_function
 
 binary_functions = [binary_to_decimal_hornet_function, binary_to_decimal_int_function, binary_to_decimal_loops_function, binary_to_decimal_old_function]
 binary_variables = ['1001', '101000', '110010', '111011', '1011001010', '10000011010', '10101110110', '11101111100', '100001011001', '101000101000']
